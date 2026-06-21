@@ -185,7 +185,7 @@ def build_word_document(week_no, start_date, end_date, days_data, conclusion):
 
 # --- Streamlit Web App Interface Execution ---
 st.set_page_config(layout="wide", page_title="AI Lesson Evaluation Portal")
-st.title("📋 PTES Automated Lesson Evaluation Portal")
+st.title("📋 A Week Lesson Integrated Evaluation Portal")
 
 # --- MAIN AREA API KEY ENTRY ---
 user_api_key = st.text_input(
@@ -268,5 +268,5 @@ if st.session_state.get('data_processed'):
     word_file = build_word_document(week_input, start_dt, end_dt, st.session_state['report_rows'],
                                     st.session_state['final_conclusion'])
     st.download_button(label="📥 Download Official Word Document (.docx)", data=word_file,
-                       file_name=f"Lesson_Evaluation_Week_{week_input}.docx",
+                       file_name=f"Evaluation_Week_{week_input}.docx",
                        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
